@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MySocial - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">MySocial</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="stories.html">Stories</a>
+      <a href="friends.html">Friends</a>
+      <a href="chat.html">Chat</a>
+      <a href="profile.html">Profile</a>
+      <button id="darkToggle" class="small-btn">Dark</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="create-post card">
+      <h3>Create Post</h3>
+      <textarea id="postText" placeholder="What's on your mind?"></textarea>
+
+      <div class="row">
+        <input type="file" id="postImage" accept="image/*">
+        <button class="btn" onclick="createPost()">Post</button>
+      </div>
+      <div id="previewBox" class="preview"></div>
+    </section>
+
+    <section id="feed" class="feed"></section>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    // page-specific init
+    document.getElementById('postImage').addEventListener('change', previewPostImage);
+    renderAll();
+  </script>
+</body>
+</html>

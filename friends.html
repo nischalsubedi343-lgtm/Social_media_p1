@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MySocial - Friends</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">MySocial</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="stories.html">Stories</a>
+      <a href="friends.html">Friends</a>
+      <a href="chat.html">Chat</a>
+      <a href="profile.html">Profile</a>
+      <button id="darkToggle" class="small-btn">Dark</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h3>Add Friend</h3>
+      <input id="friendName" placeholder="Friend name">
+      <button class="btn" onclick="addFriend()">Add</button>
+    </section>
+
+    <section class="card">
+      <h3>Your Friends</h3>
+      <div id="friendsList"></div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+  <script>renderFriends()</script>
+</body>
+</html>

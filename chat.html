@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MySocial - Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">MySocial</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="stories.html">Stories</a>
+      <a href="friends.html">Friends</a>
+      <a href="chat.html">Chat</a>
+      <a href="profile.html">Profile</a>
+      <button id="darkToggle" class="small-btn">Dark</button>
+    </div>
+  </nav>
+
+  <main class="container chat-container">
+    <aside class="card chat-list">
+      <h4>Friends</h4>
+      <div id="chatFriends"></div>
+    </aside>
+
+    <section class="card chat-window">
+      <h4 id="chatWith">Select a friend to chat</h4>
+      <div id="messages" class="messages"></div>
+      <div class="row">
+        <input id="chatInput" placeholder="Type a message...">
+        <button class="btn" onclick="sendMessage()">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    renderChatFriends();
+  </script>
+</body>
+</html>

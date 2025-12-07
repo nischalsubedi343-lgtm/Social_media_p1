@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MySocial - Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">MySocial</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="stories.html">Stories</a>
+      <a href="friends.html">Friends</a>
+      <a href="chat.html">Chat</a>
+      <a href="profile.html">Profile</a>
+      <button id="darkToggle" class="small-btn">Dark</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card profile-card">
+      <h2>Profile</h2>
+      <div class="profile-row">
+        <img id="avatar" class="avatar" src="https://via.placeholder.com/120" alt="avatar">
+        <div class="profile-controls">
+          <input type="file" id="avatarInput" accept="image/*">
+          <input id="nameInput" placeholder="Your name">
+          <input id="bioInput" placeholder="Short bio">
+          <div class="row">
+            <button class="btn" onclick="saveProfile()">Save</button>
+            <button class="btn" onclick="resetProfile()">Reset</button>
+          </div>
+        </div>
+      </div>
+      <h3>Profile Preview</h3>
+      <div id="profilePreview" class="card small"></div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    // profile page setup
+    document.getElementById('avatarInput').addEventListener('change', previewAvatar);
+    loadProfileToForm();
+  </script>
+</body>
+</html>
