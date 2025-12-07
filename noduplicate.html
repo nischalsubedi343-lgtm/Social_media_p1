@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MySocial - Login</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-card {
+      width: 320px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+    h2 {
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      background: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="login-card">
+    <h2>Welcome</h2>
+
+    <input type="text" id="username" placeholder="Enter unique username">
+    <p id="error" class="error"></p>
+
+    <button onclick="loginUser()">Continue</button>
+  </div>
+
+  <script>
+    // ---------------------------------------
+    // NO DUPLICATE USERNAME SYSTEM
+    // ---------------------------------------
+
+    function loginUser() {
+      const name = document.getElementById("username").value.trim();
+      const error = document.getElementById("error");
+
+      if (!name) {
+        error.textContent = "Username cannot be empty!";
+        return;
+      }
+
+      // Fetch all registered users
+      let userList = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Check duplicate username
+      if (userList.includes(name)) {
+        error.textContent = "This username already exists! Try a new one.";
+        return;
+      }
+
+      // Register new user (unique username)
+      userList.push(name);
+      localStorage.setItem("users", JSON.stringify(userList));
+
+      // Save current session user
+      localStorage.setItem("currentUser", name);
+
+      // Continue to home page
+      window.location.href = "home.html";
+    }
+  </script>
+
+</body>
+</html>
