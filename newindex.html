@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MySocial - Login</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-card {
+      width: 320px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+    h2 {
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      margin: 10px 0;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      background: #007bff;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter unique username">
+    <p id="error" class="error"></p>
+    <button onclick="login()">Continue</button>
+  </div>
+
+  <script src="backend.js"></script>
+</body>
+</html>
